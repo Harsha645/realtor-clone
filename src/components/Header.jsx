@@ -3,7 +3,7 @@ import { useLocation,useNavigate  } from 'react-router'
 
 export default function Header() {
   const location = useLocation()
-  // console.log(location.pathname);
+  console.log(location.pathname);
   const navigate = useNavigate()
   function pathMathRoute(route){
     if(route===location.pathname ){
@@ -18,9 +18,9 @@ export default function Header() {
             </div>
             <div>
               <ul className='flex space-x-10'>
-                <li className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMathRoute("/") && "text-black border-b-red-500"}`} onClick={()=>navigate("/")}>Home</li>
-                <li className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMathRoute("/offers") && "text-black border-b-red-500"}`} onClick={()=>navigate("/offers")}>Offers</li>
-                <li className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMathRoute("/sign-in") && "text-black border-b-red-500"}`} onClick={()=>navigate("/sign-in")}>Sign in</li>
+                <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${pathMathRoute("/") && 'text-gray-950 border-b-[3px] border-b-red-500 ' }`} onClick={()=>navigate("/")}>Home</li>
+                <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${pathMathRoute("/offers") && 'text-gray-950 border-b-[3px] border-b-red-500' }`} onClick={()=>navigate("/offers")}>Offers</li>
+                <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${pathMathRoute("/sign-in") && 'text-gray-950 border-b-[3px] border-b-red-500' }`} onClick={()=>navigate("/sign-in")}>Sign in</li>
               </ul>
             </div>
         </header>
