@@ -13,11 +13,15 @@ export default function SignIn() {
   const { email, password } = formData;
 
   function onChange(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     setFormData((prevState) => ({
       ...prevState,
       [event.target.id]: event.target.value,
     }));
+  }
+
+  function onSubmit(event) {
+    event.preventDefault()
   }
 
   return (
@@ -32,7 +36,7 @@ export default function SignIn() {
           />
         </div>
         <div className="w-full md:w-[67%] lg:w[40%] lg:ml-20">
-          <form>
+          <form onSubmit={onSubmit}>
             <input
               type="email"
               id="email"
