@@ -15,7 +15,7 @@ export default function OAuth() {
 
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log(user);
+      // console.log(user);
 
       const docRef = doc(db, "users", user.uid);
       const docSnap = await getDoc(docRef);
@@ -26,8 +26,9 @@ export default function OAuth() {
           timeStamp: serverTimestamp(),
         });
 
-        toast.success("Sign Up successful");
         navigate("/");
+        toast.success("Sign Up successful");
+        
       } else {
         toast.error("Already exist");
       }
@@ -35,6 +36,7 @@ export default function OAuth() {
       toast.error("Could not authorized with Google");
       console.log(error);
     }
+  1
   }
 
   return (
