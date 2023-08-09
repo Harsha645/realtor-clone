@@ -7,7 +7,7 @@ export default function Header() {
   // console.log(location.pathname);
 
   const navigate = useNavigate()
-  const auth = getAuth()
+  const auth = getAuth();
 
   const [pageState, setPageState] = useState("Sign in");
 
