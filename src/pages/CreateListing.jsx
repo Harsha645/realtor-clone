@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
-import {getStorage, ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 import { getAuth } from "firebase/auth";
 import { v4 as uuidv4 } from "uuid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -81,11 +86,11 @@ export default function CreateListing() {
       toast.error("maximum 6 images are allowed");
       return;
     }
-    // let geolocation = {};
-    // let location;
+    let geolocation = {};
+    let location;
     // if (geolocationEnabled) {
     //   const response = await fetch(
-    //     `https://maps.googleapis.com/maps/api/geocode/json?address=${address} & key = ${process.env.REACT_APP_GEOCODE_API_KEY}`
+    //     `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
     //   );
     //   const data = await response.json();
     //   console.log(data);
@@ -153,7 +158,7 @@ export default function CreateListing() {
     const formDataCopy = {
       ...formData,
       imgUrls,
-      // geolocation,
+      geolocation,
       timestamp: serverTimestamp(),
       userRef: auth.currentUser.uid,
     };

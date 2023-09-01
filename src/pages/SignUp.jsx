@@ -145,4 +145,15 @@ export default function SignUp() {
       </div>
     </section>
   );
+
+
+
+
+
+
+
+
+
+
+
 }
